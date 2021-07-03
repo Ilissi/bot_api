@@ -8,6 +8,6 @@ exports.ideas_list = [ async (req, res) =>{
         res.send(ideas.rows)
     }
     else {
-        res.status(500).send('Something broke!');
+        res.status(500).send('Something failed!');
     }
 }]
