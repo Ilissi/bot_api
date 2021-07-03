@@ -1,7 +1,12 @@
 let app = require('../server');
 let debug = require('debug')('express-locallibrary-tutorial:server');
-let http = require('http');
+const https = require( "https" );
+const fs = require( "fs" );
 
+httpsOptions = {
+    key: fs.readFileSync("/etc/letsencrypt/live/analytics-research-bot.ru/privkey.pem"),
+    cert: fs.readFileSync("/etc/letsencrypt/live/analytics-research-bot.ru/fullchain.pem")
+}
 
 /**
  * Get port from environment and store in Express.
@@ -14,7 +19,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-let server = http.createServer(app);
+let server = https.createServer(httpsOptions, app);
 
 /**
  * Listen on provided port, on all network interfaces.
