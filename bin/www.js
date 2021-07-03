@@ -1,6 +1,7 @@
-let app = require('./server.js');
+let app = require('../server');
 let debug = require('debug')('express-locallibrary-tutorial:server');
 let http = require('http');
+
 
 /**
  * Get port from environment and store in Express.

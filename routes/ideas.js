@@ -4,6 +4,6 @@ let strategyApiController = require('../controller/strategy.Api.Controller');
 
 let router = express.Router();
 
-router.post('/api/ideas', strategyApiController.ideas_list);
+router.post('/ideas', strategyApiController.ideas_list);
 
 module.exports = router;
